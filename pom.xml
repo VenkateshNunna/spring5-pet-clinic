@@ -6,7 +6,7 @@
 	<groupId>com.springframework</groupId>
 	<artifactId>spring5-pet-clinic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>spring5-pet-clinic</name>
 	<description>Pet Clinic Application using Spring 5</description>
@@ -79,4 +79,8 @@
 	</build>
 
 
+<modules>
+	<module>pet-clinic-data</module>
+	<module>pet-clinic-web</module>
+</modules>
 </project>
