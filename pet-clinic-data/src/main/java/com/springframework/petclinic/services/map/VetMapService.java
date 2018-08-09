@@ -1,7 +1,11 @@
 package com.springframework.petclinic.services.map;
 
-import com.springframework.petclinic.model.Pet;
+import org.springframework.stereotype.Service;
 
-public class VetMapService extends AbstractMapService<Pet, Long>{
+import com.springframework.petclinic.model.Vet;
+import com.springframework.petclinic.services.VetService;
+
+@Service
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService{
 
 }
