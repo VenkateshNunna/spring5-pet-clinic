@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.springframework.petclinic.model.Owner;
 import com.springframework.petclinic.model.Pet;
 import com.springframework.petclinic.model.PetType;
+import com.springframework.petclinic.model.Speciality;
 import com.springframework.petclinic.model.Vet;
 import com.springframework.petclinic.services.OwnerService;
 import com.springframework.petclinic.services.PetService;
@@ -56,14 +57,29 @@ public class DataLoader implements CommandLineRunner{
 		
 		System.out.println("Loaded Owners....");
 		
+		Speciality speciality1 = new Speciality();
+		speciality1.setDescription("Speciality1 Descriptionj");
+		
+		Speciality speciality2 = new Speciality();
+		speciality2.setDescription("Speciality3 Descriptionj");
+		
+		Speciality speciality3 = new Speciality();
+		speciality3.setDescription("Speciality3 Descriptionj");
+		
+		
+		
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Vet1 First Name");
 		vet1.setLastName("Vet1 Last Name");
+		vet1.getSpecialities().add(speciality1);
+		vet1.getSpecialities().add(speciality2);
 		vetService.save(vet1);
 		
 		Vet vet2 = new Vet();
 		vet2.setFirstName("Vet2 First Name");
 		vet2.setLastName("Vet2 Last Name");
+		vet2.getSpecialities().add(speciality1);
+		vet2.getSpecialities().add(speciality3);
 		vetService.save(vet2);
 		
 		System.out.println("Loaded Vets....");
