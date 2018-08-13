@@ -11,6 +11,7 @@ import com.springframework.petclinic.model.Pet;
 import com.springframework.petclinic.model.PetType;
 import com.springframework.petclinic.model.Speciality;
 import com.springframework.petclinic.model.Vet;
+import com.springframework.petclinic.model.Visit;
 import com.springframework.petclinic.services.OwnerService;
 import com.springframework.petclinic.services.PetService;
 import com.springframework.petclinic.services.PetTypeService;
@@ -78,7 +79,7 @@ public class DataLoader implements CommandLineRunner{
 		Vet vet2 = new Vet();
 		vet2.setFirstName("Vet2 First Name");
 		vet2.setLastName("Vet2 Last Name");
-		vet2.getSpecialities().add(speciality1);
+//		vet2.getSpecialities().add(speciality1);
 		vet2.getSpecialities().add(speciality3);
 		vetService.save(vet2);
 		
@@ -92,17 +93,41 @@ public class DataLoader implements CommandLineRunner{
 		petType2.setName("Pet Type2");
 		petTypeService.save(petType2);
 		
+		Visit visit1 =new Visit();
+		visit1.setDescription("Visit1 Description");
+		visit1.setDate(LocalDate.now());
+		
+		Visit visit2 =new Visit();
+		visit2.setDescription("Visit2 Description");
+		visit2.setDate(LocalDate.now());
+		
+		Visit visit3 =new Visit();
+		visit3.setDescription("Visit3 Description");
+		visit3.setDate(LocalDate.now());
+		
+		Visit visit4 =new Visit();
+		visit4.setDescription("Visit4 Description");
+		visit4.setDate(LocalDate.now());
+		
+		Visit visit5 =new Visit();
+		visit5.setDescription("Visit5 Description");
+		visit5.setDate(LocalDate.now());
+		
 		Pet pet1 = new Pet();
 		pet1.setPetType(petType1);
 		pet1.setOwner(owner1);
 		pet1.setBirthDate(LocalDate.now());
 		pet1.setName("Pet1");
+		pet1.getVisits().add(visit1);
+		pet1.getVisits().add(visit2);
 		
 		Pet pet2 = new Pet();
 		pet2.setPetType(petType2);
 		pet2.setOwner(owner1);
 		pet2.setBirthDate(LocalDate.now());
 		pet2.setName("Pet2");
+		pet2.getVisits().add(visit3);
+		pet2.getVisits().add(visit4);
 		
 		owner1.getPets().add(pet1);
 		owner1.getPets().add(pet2);
@@ -112,6 +137,7 @@ public class DataLoader implements CommandLineRunner{
 		pet3.setOwner(owner2);
 		pet3.setBirthDate(LocalDate.now());
 		pet3.setName("Pet3");
+		pet3.getVisits().add(visit5);
 		
 		owner2.getPets().add(pet3);
 		
